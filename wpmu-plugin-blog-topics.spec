@@ -10,6 +10,7 @@ Source0:	http://downloads.wordpress.org/plugin/blog-topics.zip
 URL:		http://wordpress.org/extend/plugins/blog-topics/
 BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	sed >= 4.0
+BuildRequires:	unzip
 Requires:	wpmu >= 2.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
