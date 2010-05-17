@@ -34,7 +34,7 @@
 -        <h2>Blog Topic</h2>
 -        <p>Blog Topics are how <?php echo($sitename); ?> includes your posts into the topic areas on the main <?php echo($sitename); ?> site. These topics are for the convenience of the public using the main <?php echo($sitename); ?> site and do not affect your individual blog site in any way.<p> 
 +        <h2><?php _e('Blog Topic') ?></h2>
-+        <p><?php printf(_e('Blog Topics are how %$1s includes your posts into the topic areas on the main %$1s site. These topics are for the convenience of the public using the main %$1s site and do not affect your individual blog site in any way.'), $sitename) ?></p>
++        <p><?php printf(__('Blog Topics are how %1$s includes your posts into the topic areas on the main %1$s site. These topics are for the convenience of the public using the main %1$s site and do not affect your individual blog site in any way.'), $sitename) ?></p>
          <form name="blogtopicform" action="" method="post">
              <table class="form-table">	
              <tr>
