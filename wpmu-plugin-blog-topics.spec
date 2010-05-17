@@ -2,13 +2,15 @@
 Summary:	WordPressMU Blog Topics Plugin
 Name:		wpmu-plugin-%{plugin}
 Version:	1.0
-Release:	0.2
+Release:	0.4
 License:	GPL v2+
 Group:		Applications/Publishing
 Source0:	http://downloads.wordpress.org/plugin/blog-topics.zip
 # Source0-md5:	3bb901ee63ce4c623e33b55c9f6b504b
 URL:		http://wordpress.org/extend/plugins/blog-topics/
 Patch0:		current_topic.patch
+Patch1:		localization.patch
+Patch2:		utf8.patch
 BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
@@ -31,6 +33,8 @@ site-wide aggregated content via the Blog Topics Settings menu.
 %setup -qn %{plugin}
 %undos readme.txt *.php
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

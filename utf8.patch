@@ -1,0 +1,11 @@
+--- blog-topics/cets_blogtopics.php~	2010-05-17 13:41:20.000000000 +0300
++++ blog-topics/cets_blogtopics.php	2010-05-17 14:06:53.925099344 +0300
+@@ -104,7 +104,7 @@
+ 							  banner VARCHAR(200) NOT NULL default '',
+ 							  featured Integer default 0,
+ 						      UNIQUE KEY id (id)
+-						      )";	  
++						      ) CHARACTER SET utf8 COLLATE utf8_general_ci";
+  			
+  			$results = $wpdb->query($table_topic_query);
+ 			

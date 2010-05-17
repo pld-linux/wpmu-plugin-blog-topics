@@ -1,0 +1,52 @@
+--- blog-topics/cets_blogtopics.php~	2010-05-17 13:32:34.015516991 +0300
++++ blog-topics/cets_blogtopics.php	2010-05-17 13:30:07.699696433 +0300
+@@ -534,7 +534,7 @@
+     	}
+ 		
+     	$blog_topic = $this->get_blog_topic($id);
+-    	echo "<th>Blog Topic</th> <td><select name='blog_topic_id' id='blog_topic_id'>";
++    	echo "<th>",_e('Blog Topic'),"</th> <td><select name='blog_topic_id' id='blog_topic_id'>";
+ 		
+     	foreach ( $this->get_topics() as $topic )  {
+     		if ($blog_topic == $topic->id) {
+@@ -553,7 +553,7 @@
+ 	function get_topics_select_signup($id = 0)
+     {
+     	
+-    	echo "<label for='blog_topic_id'>Blog Topic:</label><select name='blog_topic_id' id='blog_topic_id'>";
++    	echo "<label for='blog_topic_id'>",_e('Blog Topic:'),"</label><select name='blog_topic_id' id='blog_topic_id'>";
+ 		
+     	foreach ( $this->get_topics() as $topic )  {
+ 			echo "<option value='$topic->id' " .">" . $topic->topic_name ."</option>";
+@@ -678,7 +678,7 @@
+     {
+     	global $wpdb;
+     	
+-    	echo "<table><tr><th>Topic ID</th><th valign='top'>Blog Topic:</th><th>Slug</th><th>Description<th>Edit/Add</th><th>Delete</th></tr>";
++    	echo "<table><tr><th>Topic ID</th><th valign='top'>",_e('Blog Topic:'),"</th><th>Slug</th><th>Description<th>Edit/Add</th><th>Delete</th></tr>";
+     	foreach ( $this->get_topics() as $topic )  {
+ 			
+     		echo "<tr><form name='catupdate' method='post'><td align='center'>" . $topic->id . "</td>";
+@@ -742,8 +742,8 @@
+         <div id="message" class="updated fade"><p><?php _e('Options saved.') ?></p></div>
+         <?php	} ?>
+         <div class="wrap">
+-        <h2>Blog Topic</h2>
+-        <p>Blog Topics are how <?php echo($sitename); ?> includes your posts into the topic areas on the main <?php echo($sitename); ?> site. These topics are for the convenience of the public using the main <?php echo($sitename); ?> site and do not affect your individual blog site in any way.<p> 
++        <h2><?php _e('Blog Topic') ?></h2>
++        <p><?php printf(_e('Blog Topics are how %$1s includes your posts into the topic areas on the main %$1s site. These topics are for the convenience of the public using the main %$1s site and do not affect your individual blog site in any way.'), $sitename) ?></p>
+         <form name="blogtopicform" action="" method="post">
+             <table class="form-table">	
+             <tr>
+@@ -751,9 +751,9 @@
+                     $this->get_topics_select();
+             ?>
+             <tr>
+-            <th scope="row">Blog Sharing Options</th>
++            <th scope="row"><?php _e('Blog Sharing Options') ?></th>
+             <td>
+             <fieldset>	
+-            <legend class="hidden">Blog Sharing Options</legend>
++            <legend class="hidden"><?php _e('Blog Sharing Options') ?></legend>
+             <label for="cets_topicexclude_no">
+             <input id="cets_topicexclude_no" type="radio" name="cets_topicexclude" value="0" <?php if( $excluded == 0 ) echo " checked"?> />
