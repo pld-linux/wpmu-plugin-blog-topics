@@ -2,12 +2,13 @@
 Summary:	WordPressMU Blog Topics Plugin
 Name:		wpmu-plugin-%{plugin}
 Version:	1.0
-Release:	0.1
+Release:	0.2
 License:	GPL v2+
 Group:		Applications/Publishing
 Source0:	http://downloads.wordpress.org/plugin/blog-topics.zip
 # Source0-md5:	3bb901ee63ce4c623e33b55c9f6b504b
 URL:		http://wordpress.org/extend/plugins/blog-topics/
+Patch0:		current_topic.patch
 BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
@@ -18,7 +19,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		wp_root		%{_datadir}/wpmu
 %define		wp_content	%{wp_root}/wp-content
 %define		pluginsdir	%{wp_content}/mu-plugins
-%define		_sysconfdir	/etc/webapps/wpmu
 
 %description
 This plugin creates site-wide topics. Each blog can be identified as
@@ -29,11 +29,12 @@ site-wide aggregated content via the Blog Topics Settings menu.
 
 %prep
 %setup -qn %{plugin}
-%undos readme.txt
+%undos readme.txt *.php
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{wp_content},%{pluginsdir},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{wp_content},%{pluginsdir}}
 cp -a cets_blogtopics.php cets_blog_topics $RPM_BUILD_ROOT%{pluginsdir}
 
 %clean

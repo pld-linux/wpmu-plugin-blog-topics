@@ -1,0 +1,9 @@
+--- blog-topics/cets_blogtopics.php~	2010-05-17 13:30:07.692017854 +0300
++++ blog-topics/cets_blogtopics.php	2010-05-17 13:30:07.699696433 +0300
+@@ -538,5 +538,5 @@
+     	foreach ( $this->get_topics() as $topic )  {
+-    		if ($id == $topic->id) {
++    		if ($blog_topic == $topic->id) {
+     			$selected = "selected='selected'";
+     		}
+ 			echo "<option value='$topic->id' ". $selected .">" . $topic->topic_name ."</option>";
