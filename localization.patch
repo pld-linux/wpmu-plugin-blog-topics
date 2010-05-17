@@ -1,5 +1,5 @@
---- blog-topics/cets_blogtopics.php~	2010-05-17 13:32:34.015516991 +0300
-+++ blog-topics/cets_blogtopics.php	2010-05-17 13:30:07.699696433 +0300
+--- blog-topics/cets_blogtopics.php	2010-05-17 13:30:07.699696433 +0300
++++ blog-topics/cets_blogtopics.php	2010-05-17 14:56:42.000000000 +0300
 @@ -534,7 +534,7 @@
      	}
  		
@@ -38,7 +38,7 @@
          <form name="blogtopicform" action="" method="post">
              <table class="form-table">	
              <tr>
-@@ -751,9 +751,9 @@
+@@ -751,18 +751,18 @@
                      $this->get_topics_select();
              ?>
              <tr>
@@ -50,3 +50,14 @@
 +            <legend class="hidden"><?php _e('Blog Sharing Options') ?></legend>
              <label for="cets_topicexclude_no">
              <input id="cets_topicexclude_no" type="radio" name="cets_topicexclude" value="0" <?php if( $excluded == 0 ) echo " checked"?> />
+-            <?php _e("<b>Share my blog's content!</b> - (This will automatically include your article headlines and list your site in the <?php echo($sitename); ?> site directory and on related blog widgets. It can also increase your Google ranking if you haven't blocked search engines.)"); ?>
++            <?php printf(__('<b>Share my blog\'s content!</b> - (This will automatically include your article headlines and list your site in the %1$s site directory and on related blog widgets. It can also increase your Google ranking if you haven\'t blocked search engines.)'), $sitename); ?>
+             </label>
+ 			<br />
+             <label for="cets_topicexclude_yes">
+ 			<input id="cets_topicexclude_yes" type="radio" name="cets_topicexclude" value="1" <?php if( $excluded == 1 ) echo " checked"?> />
+-			<?php _e("<b>Hide my blog on the main blog and in widgets.</b> - (Not recommended. This prevents the public from finding your articles and site through the <?php echo($sitename); ?> site directory and widgets. Your site will still be visible to people linking directly to it."); ?>
++			<?php printf(__('<b>Hide my blog on the main blog and in widgets.</b> - (Not recommended. This prevents the public from finding your articles and site through the %1$s site directory and widgets. Your site will still be visible to people linking directly to it.'), $sitename); ?>
+             </label>
+ 			<br />
+             </fieldset>
