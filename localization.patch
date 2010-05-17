@@ -1,4 +1,4 @@
---- blog-topics/cets_blogtopics.php	2010-05-17 13:30:07.699696433 +0300
+--- blog-topics/cets_blogtopics.php	2010-05-17 14:56:42.000000000 +0300
 +++ blog-topics/cets_blogtopics.php	2010-05-17 14:56:42.000000000 +0300
 @@ -534,7 +534,7 @@
      	}
@@ -27,6 +27,15 @@
      	foreach ( $this->get_topics() as $topic )  {
  			
      		echo "<tr><form name='catupdate' method='post'><td align='center'>" . $topic->id . "</td>";
+@@ -709,7 +709,7 @@
+ 	// Adds the submenu to the blog settings screen
+     function add_submenu()
+     {
+-    	add_options_page('Blog Topic Configuration', 'Blog Topic', 10, 'cets_blog_topic', array(&$this,'config_page'));
++    	add_options_page('Blog Topic Configuration', __('Blog Topic'), 10, 'cets_blog_topic', array(&$this,'config_page'));
+     }
+     
+ 	// Creates the configuration page for an individual blog (blog's settings screen sub menu)
 @@ -742,8 +742,8 @@
          <div id="message" class="updated fade"><p><?php _e('Options saved.') ?></p></div>
          <?php	} ?>
