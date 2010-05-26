@@ -2,7 +2,7 @@
 Summary:	WordPressMU Blog Topics Plugin
 Name:		wpmu-plugin-%{plugin}
 Version:	1.0
-Release:	0.4
+Release:	0.8
 License:	GPL v2+
 Group:		Applications/Publishing
 Source0:	http://downloads.wordpress.org/plugin/blog-topics.zip
