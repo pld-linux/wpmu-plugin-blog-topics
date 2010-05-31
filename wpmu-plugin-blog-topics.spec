@@ -31,7 +31,7 @@ site-wide aggregated content via the Blog Topics Settings menu.
 
 %prep
 %setup -qn %{plugin}
-%undos readme.txt *.php
+%{undos -f txt,php}
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
