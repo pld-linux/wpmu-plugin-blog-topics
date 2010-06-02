@@ -11,7 +11,7 @@ URL:		http://wordpress.org/extend/plugins/blog-topics/
 Patch0:		current_topic.patch
 Patch1:		localization.patch
 Patch2:		utf8.patch
-BuildRequires:	rpmbuild(macros) >= 1.553
+BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
 Requires:	wpmu >= 2.9
@@ -31,7 +31,7 @@ site-wide aggregated content via the Blog Topics Settings menu.
 
 %prep
 %setup -qn %{plugin}
-%{undos -f txt,php}
+%undos readme.txt *.php
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
